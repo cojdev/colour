@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "lib": [
+      "dom", "es2015"
+    ],
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "webpack.config.js"
+  ],
+}
