@@ -1,4 +1,5 @@
 import getRandomHex from './getRandomHex';
+import hexToHsl from './hexToHsl';
 import hexToRgb from './hexToRgb';
 import hslToCss from './hslToCss';
 import hslToHex from './hslToHex';
@@ -64,5 +65,12 @@ describe('getRandomHex', () => {
   it('should return a random bright hex colour', () => {
     const result = getRandomHex(true);
     expect(result).toMatch(/^#[0-9a-f]{6}$/);
+  });
+});
+
+describe('hexToHsl', () => {
+  it('should convert a hex string to an hsl array', () => {
+    const result = hexToHsl('#ff0000');
+    expect(result).toEqual([0, 100, 50]);
   });
 });

@@ -9,7 +9,19 @@ Install dependencies
 npm i
 ```
 
-Compile
+## Compile
+
+Run unit tests
+```
+npm run test
+```
+
+Watch for changes and run tests
+```
+npm run test:watch
+```
+
+Build the library
 ```
 npm run build
 ```
