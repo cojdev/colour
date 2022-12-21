@@ -2,10 +2,10 @@ import { HSLColour, RGBColour } from '../types';
 
 /**
  * Convert hsl to rgb
- * @param hue hue (hsl if array)
- * @param sat saturation
- * @param lum luminosity
- * @returns {array}
+ * @param hue hue (hsl if array) 0-360
+ * @param sat saturation 0-100
+ * @param lum luminosity 0-100
+ * @returns RGB array [r, g, b] 0-255
  */
 const hslToRgb = (
   hue: HSLColour | number,
@@ -23,6 +23,11 @@ const hslToRgb = (
     s = sat;
     l = lum;
   }
+
+  // normalise values
+  h /= 360;
+  s /= 100;
+  l /= 100;
 
   let rgb = [];
   let c = 0;
@@ -53,10 +58,8 @@ const hslToRgb = (
 
   m = l - c / 2;
 
-  rgb = rgb.map((item) => Math.floor((item + m) * 255));
-
-  // console.log(rgb);
-  return rgb as RGBColour;
+  // covert to 0-255
+  return rgb.map((item) => Math.floor((item + m) * 255)) as RGBColour;
 };
 
 export default hslToRgb;

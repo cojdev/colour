@@ -22,7 +22,7 @@ const hexToRgb = (hex: string): RGBColour => {
     }
 
     default:
-      return [0, 0, 0];
+      throw new Error('Invalid hex string provided');
   }
 };
 

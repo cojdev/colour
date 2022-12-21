@@ -1,3 +1,4 @@
+import { HexColour } from '../types';
 import hslToHex from './hslToHex';
 
 /**
@@ -5,7 +6,7 @@ import hslToHex from './hslToHex';
  * @param bright whether to return a bright colour
  * @returns hexadecimal colour
  */
-const getRandomHex = (bright: boolean = false): string => {
+const getRandomHex = (bright: boolean = false): HexColour => {
   if (bright) {
     return hslToHex(Math.floor(Math.random() * 360), 85, 53);
   }

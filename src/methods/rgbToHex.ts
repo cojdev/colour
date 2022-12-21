@@ -1,15 +1,17 @@
+import { HexColour, RGBColour } from '../types';
+
 /**
  * Convert rgb to hexadecimal
- * @param r red, green and blue array or red component
- * @param g green component
- * @param b blue component
+ * @param red red, green and blue array or red component
+ * @param green green component
+ * @param blue blue component
  * @returns hex string
  */
 const rgbToHex = (
-  red: number[] | number,
+  red: RGBColour | number,
   green?: number,
   blue?: number
-): string => {
+): HexColour => {
   let rgb;
 
   if (Array.isArray(red)) {
@@ -18,7 +20,6 @@ const rgbToHex = (
     rgb = [red, green, blue];
   }
 
-  let ret = '#';
   const components = rgb.map((item) => {
     const temp = item.toString(16);
     if (temp.length === 1) {
@@ -26,8 +27,8 @@ const rgbToHex = (
     }
     return temp;
   });
-  ret += components.join('');
-  return ret;
+
+  return `#${components.join('')}`;
 };
 
 export default rgbToHex;

@@ -23,6 +23,7 @@ const hexToHsl = (hex: string): HSLColour => {
     default:
       throw new Error('Invalid hex string provided');
   }
+
   const r = rgb[0] / 255;
   const g = rgb[1] / 255;
   const b = rgb[2] / 255;
