@@ -36,7 +36,7 @@ const hslToRgb = (
 
   c = (1 - Math.abs(2 * l - 1)) * s;
 
-  const h1 = h / 60;
+  const h1 = h * 6;
 
   x = c * (1 - Math.abs((h1 % 2) - 1));
 
